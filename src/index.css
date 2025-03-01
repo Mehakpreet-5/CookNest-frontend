@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.fontt {
+  font-family: "Dancing Script";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.mont {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.bgg {
+  background: #fcfaef;
+
+}
+
+.light-text{
+  color: #e0bb6b;
+}
+
+.dark-yell{
+  color: #ddb765c0;
+}
+.light-bg{
+  background: #e0bb6b;
+}
+.oragg {
+  color: #fa9774;
+  
+}
+
+.dark-orange {
+  color: #f8591f;
+}
+
+.greenn {
+  color: #264b27;
+}
+
+.bg-orang{
+  background: #eec7bb;
+  
+}
+
+.yell {
+  background: #f0cb7c;
+}
+
+.dark-yell{
+  background: #ddb765c0;
+}
+.bggg {
+  background: #fffdfd;
+}
+
+
+/* animation */
+
+.jump {
+  animation: jump 1.5s ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.jumpp {
+  animation: jump 2s ease-in-out;
+  animation-iteration-count: 2;
+  animation-play-state: paused;
+}
+
+@keyframes jumpp {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
