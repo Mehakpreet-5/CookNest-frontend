@@ -1,7 +1,7 @@
 
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import './Main.css';
+import './main.css';
 import { assets } from '../assets/AI/assets.js';
 import { Context } from "./ContextAI.jsx";
 import Sidebar from './Sidebar.jsx';
