@@ -50,7 +50,7 @@ function SeeOrder() {
     };
 
     return (
-        <div className="min-h-screen w-full relative mb-12">
+        <div className="min-h-screen w-full relative mb-36">
             {!emailSubmitted && (
                 <div className="absolute inset-0">
                     <div className="flex flex-row ">

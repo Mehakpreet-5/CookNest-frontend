@@ -127,7 +127,7 @@ const Cart = () => {
                         )}
                     </div>
                     {cartItems.length > 0 && (
-                        <div className="mt-4 lg:mt-32 lg:w-72 lg:h-96 text-center bg-orange-200 bg-opacity-50 shadow-xl flex items-center mx-auto p-4">
+                        <div className="mt-4  lg:mt-44 lg:w-72 lg:h-96 text-center bg-orange-200 bg-opacity-50 shadow-xl flex items-center mx-auto p-4">
                             <div className="space-y-3 text-center lg:ml-6">
                                 <h2 className="md:text-3xl text-xl font-bold">Total: ₹{total.toFixed(2)}</h2>
                                 <h4 className='text-lg mt-2 mb-2'>Standard Delivery (Free)</h4>

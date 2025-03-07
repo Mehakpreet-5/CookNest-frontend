@@ -9,12 +9,14 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative text-green-900 ">
+    <div className="relative text-green-900  ">
       {/* Main Navbar */}
-      <div className="lg:flex  hidden w-full justify-between items-center px-6 py-4 bg-transparent z-50 fixed top-0 left-0 right-0">
+      {/* <div className="lg:flex  hidden w-full justify-between items-center px-6 py-4 bg-transparent z-50 fixed top-0 left-0 right-0"> */}
+      <div className="lg:flex absolute hidden w-full justify-between items-center px-6 py-4  z-50  top-0">
+
         {/* Logo */}
         <h1 className="text-5xl fontt ml-48 mt-1">
-          <span className="oragg">Cook</span>
+          <span className="text-yellow-500">Cook</span>
           <span className="text-green-800">Nest</span>
         </h1>
 
@@ -42,7 +44,7 @@ function Navbar() {
       {/* Mobile Navbar Toggle Button */}
       <div className="lg:hidden flex  justify-between items-center px-6 py-4 bg-transparent z-50 fixed top-0 left-0 right-0">
         <h1 className="text-4xl fontt ml-2">
-          <span className="oragg">Cook</span>
+          <span className="text-yellow-500">Cook</span>
           <span className="greenn">Nest</span>
         </h1>
         <div className="flex items-center space-x-4">

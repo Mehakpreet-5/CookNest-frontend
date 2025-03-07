@@ -57,7 +57,7 @@ const handlePayment = async () => {
       <div className=" font-serif w-9/12 h-5/12 lg:h-5/6 mb-10 lg:mb-0  lg:w-7/12 mx-auto mt-20 p-6 bg-transparent bg-opacity-80 rounded-lg shadow-2xl lg:flex lg:space-x-28 lg:ml-40">
         <div className='mt-10 lg:ml-14  flex flex-col md:flex-row space-x-28'>
           <div>
-          <h2 className="md:text-6xl  text-2xl font-bold mb-6 text-center fontt text-green-800">Payment Information</h2>
+          <h2 className="md:text-5xl  text-2xl font mb-6 text-center  text-green-800">Payment Information</h2>
 
           <h3 className="md:text-3xl font-semibold mb-4">Order Summary</h3>
           <ul>
@@ -75,7 +75,7 @@ const handlePayment = async () => {
           </div>
           <div>
           {Object.keys(address).length > 0 && (
-            <div className="md:mt-24 mt-14">
+            <div className="md:mt-0 mt-14">
               <h3 className="text-xl md:text-4xl mb-4 text-green-800">Shipping Address</h3>
               <p className='md:text-2xl'>{address.name}</p>
               <p className='md:text-2xl'>{address.email}</p>
@@ -83,13 +83,13 @@ const handlePayment = async () => {
               <p className='md:text-2xl'>{address.city}, {address.state} {address.zip}</p>
 
               <div className='mt-6 '>
-          <label className="flex items-center md:text-4xl font-medium mb-1 text-green-800">Payment Method</label>
+          {/* <label className="flex items-center md:text-4xl font-medium mb-1 text-green-800">Payment Method</label>
          
           <label className="flex items-center">
               <input type="radio" value="COD" checked={paymentMethod === 'COD'} onChange={() => setPaymentMethod('COD')} />
               <span className="ml-2 md:text-2xl lg:mt-4">Cash on Delivery</span>
             </label>
-    
+     */}
 
           <button
             onClick={handlePayment}

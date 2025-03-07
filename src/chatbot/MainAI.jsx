@@ -43,9 +43,9 @@ const Main = () => {
                 <div className="recipe-main-container text-center lg:text-start md:text-start px-5 lg:px-0 lg:mr-72 mt-1 lg:mt-28 md:mt-10 ">
                     {!showResult ? (
                         <>
-                            <div className="recipe-greet   ">
-                                <p><span>Hello, Foodie!</span></p>
-                                <p>What delicious ideas are you cooking up today?</p>
+                            <div >
+                                <p className='text-3xl ml-5 text-yellow-500 font-medium'><span>Hello, Foodie!</span></p>
+                                <p className="recipe-greet   ">What delicious ideas are you cooking up today?</p>
                             </div>
                             <div className="recipe-cards space-x-4 ">
                                 <div className="recipe-card border border-yellow-600 border-opacity-30 bg-yellow-100 bg-opacity-10" onClick={() => setInput("Suggest me a pasta recipe")}>

@@ -1,12 +1,10 @@
 
-
 import React, { useState } from 'react';
-import { FaHome, FaUser, FaCity, FaMapSigns, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaUser, FaCity, FaMapSigns, FaEnvelope } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import deliveryImg from '../assets/11.png'; // Import the image
+import deliveryImg from '../assets/11.png';
 
 const AddressDetail = () => {
-  // Address state to store the user's address input
   const [address, setAddress] = useState({
     name: '',
     email: '',
@@ -16,38 +14,37 @@ const AddressDetail = () => {
     zip: '',
   });
 
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
-  // Handle input change and update the address state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAddress((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission and navigate to the payment page with address data
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Address submitted:', address);
-    navigate('/payment', { state: { address } }); // Pass address as state to the payment page
+    navigate('/payment', { state: { address } });
   };
 
   return (
-    <div className='lg:flex lg:flex-row lg:h-screen bg-gradient-to-r from-yellow-50 to-pink-50 text-gray-800 
-    rounded-lg shadow-lg pt-4 lg:pt-16 pb-10 lg:pb-'>
+    <div className='flex flex-col lg:flex-row items-center  lg:h-screen bg-gradient-to-r from-yellow-50 to-pink-50 text-gray-800 
+    rounded-lg shadow-lg p-6 lg:pt-16'>
+
       {/* Image Section */}
-      <div className='hidden sm:block md:block mt-44'>
-        <img src={deliveryImg} alt="Delivery" className='hidden sm:block md:block lg:h-9/12 lg:w-11/12 ml-32 ' />
+      <div className='w-full flex  mb-6 lg:mb-0 lg:w-5/12 ml-28 '>
+        <img src={deliveryImg} alt="Delivery" className='w-5/6 sm:w-4/6 lg:w-11/12 mt-20 hidden sm:block' />
       </div>
 
       {/* Address Form Section */}
-      <div className="w-4/6 lg:w-2/6 h-5/6 mx-auto lg:mt-20 p-6 bg-transparent rounded-lg shadow-2xl">
-        <h2 className="text-4xl font-bold mb-6 text-center text-gray-800 lg:mt-6">Enter Your Address</h2>
-        <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6  lg:m-6 lg:text-2xl">
-          
+      <div className="w-full sm:w-5/6 md:w-3/4 lg:w-2/6 lg:ml-20 py-14 mt-7 lg:mt-0 bg-transparent p-6 lg:px-9 rounded-lg shadow-2xl shadow-gray500">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-center text-gray-800">Enter Your Address</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+
           {/* Name Field */}
-          <div className="mb-4">
-            <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
-              <FaUser className="mr-2  text-gray-600" /> Name
+          <div>
+            <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
+              <FaUser className="mr-2 text-gray-600" /> Name
             </label>
             <input
               type="text"
@@ -55,14 +52,14 @@ const AddressDetail = () => {
               value={address.name}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded w-full p-2 bg-white  focus:bg-yellow-10 text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+              className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
               placeholder="Enter your name"
             />
           </div>
 
           {/* Email Field */}
-          <div className="mb-4">
-            <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
+          <div>
+            <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
               <FaEnvelope className="mr-2 text-gray-600" /> Email
             </label>
             <input
@@ -71,15 +68,15 @@ const AddressDetail = () => {
               value={address.email}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded w-full p-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+              className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
               placeholder="Enter your email"
             />
           </div>
 
           {/* Street and City Fields */}
-          <div className='grid grid-cols-2 space-x-2 lg:space-x-4'>
-            <div className="mb-4">
-              <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            <div>
+              <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
                 <FaHome className="mr-2 text-gray-600" /> Street Address
               </label>
               <input
@@ -88,13 +85,13 @@ const AddressDetail = () => {
                 value={address.street}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 rounded w-full p-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+                className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 placeholder="Enter your street address"
               />
             </div>
 
-            <div className="mb-4">
-              <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
+            <div>
+              <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
                 <FaCity className="mr-2 text-gray-600" /> City
               </label>
               <input
@@ -103,16 +100,16 @@ const AddressDetail = () => {
                 value={address.city}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 rounded w-full p-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+                className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 placeholder="Enter your city"
               />
             </div>
           </div>
 
           {/* State and ZIP Code Fields */}
-          <div className='grid grid-cols-2 space-x-2 lg:space-x-4'>
-            <div className="mb-4">
-              <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            <div>
+              <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
                 <FaMapSigns className="mr-2 text-gray-600" /> State
               </label>
               <input
@@ -121,13 +118,13 @@ const AddressDetail = () => {
                 value={address.state}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 rounded w-full p-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+                className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 placeholder="Enter your state"
               />
             </div>
 
-            <div className="mb-4">
-              <label className="flex lg:text-2xl items-center text-sm font-medium mb-2 text-gray-700">
+            <div>
+              <label className="flex items-center text-sm sm:text-base font-medium mb-2 text-gray-700">
                 <FaEnvelope className="mr-2 text-gray-600" /> ZIP Code
               </label>
               <input
@@ -136,7 +133,7 @@ const AddressDetail = () => {
                 value={address.zip}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 rounded w-full p-2 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-pink-300 transition duration-300"
+                className="border border-gray-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
                 placeholder="Enter your ZIP code"
               />
             </div>
@@ -145,8 +142,7 @@ const AddressDetail = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-yellow-500 lg:text-2xl hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded shadow transition duration-300 
-            transform hover:scale-105 ml-24 lg:ml-48"
+            className="bg-yellow-500 text-lg sm:text-xl hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded shadow transition transform hover:scale-105 w-full"
           >
             Save Address
           </button>

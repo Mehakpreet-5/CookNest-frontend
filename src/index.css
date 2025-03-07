@@ -18,6 +18,16 @@
   font-style: normal;
 }
 
+.txt90px {
+  font-size: 40px; /* Default size for smaller screens */
+}
+
+@media (min-width: 1024px) { /* Large screens (lg in Tailwind) */
+  .text-large {
+    font-size: 90px;
+  }
+}
+
 .bgg {
   background: #fcfaef;
 
