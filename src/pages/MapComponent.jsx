@@ -55,14 +55,14 @@ function MapComponent() {
             <img
               src={picc}
               alt="Gallery"
-              className="ml-12 lg:ml-5 h-5/6 lg:h-full lg:w-11/12 lg:px-12 w-5/6 rounded-lg brightness-75 cursor-pointer"
+              className="ml-12 lg:ml-5 h-5/6 lg:h-full lg:w-11/12 rounded-xl lg:px-12 w-5/6 rounded-lg brightness-75 cursor-pointer"
             />
 
             {/* Play Icon with Slower Glowing Effect */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative flex items-center justify-center">
                 {/* Slower Glowing Effect */}
-                <div className="absolute w-20 h-20 bg-white opacity-30 rounded-full animate-[ping_2s_ease-in-out_infinite]"></div>
+                <div className="absolute w-20 h-20  bg-white opacity-80 rounded-full animate-[ping_2s_ease-in-out_infinite]"></div>
 
                 {/* Play Icon */}
                 <div className="bg-white rounded-full p-4 lg:p-5 shadow-lg">

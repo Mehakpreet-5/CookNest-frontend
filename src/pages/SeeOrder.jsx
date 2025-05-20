@@ -98,7 +98,7 @@ function SeeOrder() {
             )}
 
             {emailSubmitted && (
-                <div className="h-screen relative flex flex-row">
+                <div className="h-screen relative flex flex-row transition-opacity duration-1000 ease-in-out">
                     <div className=''>
                     <img src={blurBg} alt="Orders Background" className=" relative h-[1000px] w-[980px] object-cover opacity-85 " />
                     <div className="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 p-5 absolute inset-0 mt-16 md:mt-44 ml-4 sm:ml-6">

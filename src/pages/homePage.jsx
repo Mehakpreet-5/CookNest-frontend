@@ -16,7 +16,7 @@ function HomePage() {
                     rubi text-base ml-16 lg:ml-2 lg:mt-0 md:ml-72 ' >
                         WELCOME TO COOKNEST
                     </h1>
-                    <h1 className='fontt text-5xl md:text-4xl lg:text-8xl lg:font-medium text-center lg:text-left lg:mb-20'>
+                    <h1 className='fontt text-5xl md:text-4xl lg:text-7xl lg:font-medium text-center lg:text-left lg:mb-20'>
                     Delicious Catering  <br /> <span className="text-yellow-500">& </span>Home Delivery Solutions
                     </h1>
                     <div className='flex justify-center lg:justify-start space-x-6 lg:space-x-10 lg:mt-9 '

@@ -44,7 +44,7 @@ const Login = () => {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-r from-yellow-50 to-pink-50">
-      <div className="flex pt-20 lg:pt-64  justify-center w-full min-h-screen">
+      <div className="flex pt-20 lg:pt-52  justify-center w-full min-h-screen">
         <div className="w-full  max-w-sm">
           <div className="relative z-10 text-center  p-10 bg-white bg-opacity-25 rounded-lg shadow-xl">
             <form className="login-form" onSubmit={handleSubmit(handleLogin)}>

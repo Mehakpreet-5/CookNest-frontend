@@ -83,7 +83,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faEnvelope, faPhone, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faYoutube, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import Dosa from '../assets/dosaimg.webp';
-
+import paneerTikka from '../assets/foodlist/tikka.jpg';
+import iceCreamSundae from '../assets/foodlist/mixIce.webp';
 function Footer() {
   return (
     <div className="">
@@ -120,7 +121,7 @@ function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="space-y-4">
+          <div className="space-y-4 ml-3">
             <h6 className="text-gray-700 text-2xl font-semibold">CONTACT US</h6>
             <ul className="text-lg space-y-2">
               <li className="flex items-center"><FontAwesomeIcon icon={faLocationDot} className="mr-2 text-yellow-600" /> 123 Street, New York</li>
@@ -131,11 +132,11 @@ function Footer() {
           </div>
 
           {/* Social Media and Gallery */}
-          <div className="hidden sm:block space-y-4 lg:mr-32">
-            <h6 className="text-gray-700 text-2xl font-semibold">SOCIAL GALLERY</h6>
+          <div className="hidden sm:block space-y-4 lg:mr-20">
+            <h6 className="text-gray-700 text-2xl lg:ml-3 font-semibold">SOCIAL GALLERY</h6>
             <div className="grid grid-cols-3 gap-3">
-              {[Dosa, Dosa, Dosa].map((img, index) => (
-                <img key={index} src={img} alt="Gallery" className="rounded-full h-20 w-20 shadow-md" />
+              {[Dosa, paneerTikka, iceCreamSundae].map((img, index) => (
+                <img key={index} src={img} alt="Gallery" className="rounded-full h-24 w-40 shadow-md" />
               ))}
             </div>
           </div>

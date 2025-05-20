@@ -23,6 +23,7 @@ import ShowOrder from './cart/showOrder.jsx';
 import { OrderProvider } from './cart/OrderContext.jsx';
 import SeeOrder from './pages/SeeOrder.jsx';
 import {SeeOrderContext} from './cart/SeeOrderContext.jsx'
+import DelayedLoader from './components/DelayedLoader.jsx'
 function App() {
   const [cartItems, setCartItems] = useState([]); 
 
@@ -53,7 +54,7 @@ useEffect(() => {
           <Route path="/payment" element={<PaymentPage  />} />
           <Route path="/admin" element={<AdminPanel/>} />
           <Route path="/done" element={<OrderDonepage/>} />
-          <Route path="/see-order" element={<SeeOrder />} />
+          <Route path="/see-order" element={<DelayedLoader><SeeOrder /></DelayedLoader>} />
         </Routes>
        <Footer/>
    
