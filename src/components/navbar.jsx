@@ -32,13 +32,20 @@ function Navbar() {
         </ul>
 
         {/* Booking and AI buttons */}
-        <div className="flex space-x-6 mr-52">
-        
-                <Link to="/cart">    <FontAwesomeIcon icon={faCartShopping} className='mt-3 h-7' /></Link>
-          <div className="p-2 px-5 text-center text-2xl rounded-full bg-yellow-600 bg-opacity-45 ">
-            <Link to="/ai">AI Recipe</Link>
-          </div>
-        </div>
+           <div className="flex space-x-6 mr-52 items-center">
+      <Link to="/cart" className="relative inline-block">
+        <FontAwesomeIcon icon={faCartShopping} className="mt-3 h-7" />
+        {/* Red dot */}
+        <span
+          className="absolute top-3 right-0 block h-3 w-3 rounded-full bg-red-600 border-2 border-white"
+          style={{ transform: 'translate(50%, -50%)' }}
+        ></span>
+      </Link>
+
+      <div className="p-2 px-5 text-center text-2xl rounded-full bg-yellow-600 bg-opacity-45 ">
+        <Link to="/ai">AI Recipe</Link>
+      </div>
+    </div>
       </div>
 
       {/* Mobile Navbar Toggle Button */}
@@ -79,7 +86,11 @@ function Navbar() {
             {/* <div className="p-2 w-full text-center rounded-full bg-yellow-600 bg-opacity-45 rubi mb-4">
               <Link to="/booking" onClick={() => setIsOpen(false)}>Book Now</Link>
             </div> */}
-                 <Link to="/cart">    <FontAwesomeIcon icon={faCartShopping} className='mt-3 h-5' /></Link>
+                 <Link to="/cart">    <FontAwesomeIcon icon={faCartShopping} className='mt-3 h-5' />
+                  <span
+          className="absolute top-80 right-52 block h-3 w-3 rounded-full bg-red-600 border-2 border-white"
+          style={{ transform: 'translate(50%, -50%)' }}
+        ></span></Link>
             <div className="p-2 w-full text-center rounded-full bg-yellow-600 bg-opacity-45 rubi">
               <Link to="/ai" onClick={() => setIsOpen(false)}>AI Recipe</Link>
             </div>

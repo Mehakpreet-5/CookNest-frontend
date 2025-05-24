@@ -190,15 +190,6 @@ function SeeOrder() {
     const [email, setEmail] = useState('');
     const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-    // ✅ Preload background images
-    useEffect(() => {
-        const preloadImages = [foodbgg, greenn, blurBg, halfbg];
-        preloadImages.forEach((src) => {
-            const img = new Image();
-            img.src = src;
-        });
-    }, []);
-
     useEffect(() => {
         const fetchOrders = async () => {
             setLoading(true);
@@ -234,7 +225,16 @@ function SeeOrder() {
     };
 
     return (
-        <div className="min-h-screen w-full relative mb-36">
+        <div className="min-h-screen w-full relative mb-36"
+           data-aos="fade-down"  data-aos-once='true'   data-aos-delay="700" data-aos-easing="ease-in-out" data-aos-duration="1000">
+            {/* ✅ Hidden preload images */}
+            <div style={{ display: 'none' }}>
+                <img src={foodbgg} alt="preload" />
+                <img src={greenn} alt="preload" />
+                <img src={blurBg} alt="preload" />
+                <img src={halfbg} alt="preload" />
+            </div>
+
             {!emailSubmitted && (
                 <div className="absolute inset-0">
                     <div className="flex flex-row">
@@ -280,10 +280,12 @@ function SeeOrder() {
             )}
 
             {emailSubmitted && (
-                <div className="h-screen relative flex flex-row transition-opacity duration-1000 ease-in-out">
+                <div className="h-screen relative flex flex-row transition-opacity duration-1000 ease-in-out"
+                   data-aos="fade-down"  data-aos-once='true'   data-aos-delay="700" data-aos-easing="ease-in-out" data-aos-duration="500">
                     <div>
-                        <img src={blurBg} alt="Orders Background" className="relative h-[1000px] w-[980px] object-cover opacity-85" />
-                        <div className="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 p-5 absolute inset-0 mt-16 md:mt-44 ml-4 sm:ml-6">
+                        <img src={blurBg} alt="Orders Background" className="relative h-[840px] w-[980px] object-cover opacity-85" />
+                        <div className="w-full jump sm:w-10/12 md:w-8/12 lg:w-6/12 p-5 absolute inset-0 mt-14 md:mt-36 ml-4 sm:ml-6"
+                           data-aos="fade-down"  data-aos-once='true'   data-aos-delay="900" data-aos-easing="ease-in-out" data-aos-duration="1800">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 fontt text-emerald-800 ml-10">
                                 Your Orders
                             </h1>
@@ -291,13 +293,14 @@ function SeeOrder() {
                             {loading ? (
                                 <p className="text-center text-lg">Loading...</p>
                             ) : (
-                                <div className="overflow-x-auto absolute w-10/12 rounded-lg shadow-lg border border-gray-200 mt-10 ml-10">
+                                <div className="overflow-x-auto absolute w-10/12 rounded-lg shadow-lg border border-gray-200 mt-10 ml-10"
+                                >
                                     {filteredOrders.length > 0 ? (
-                                        <table className="min-w-full divide-y divide-gray-200 bg-white bg-opacity-35">
+                                        <table className="min-w-full   divide-y divide-gray-200 bg-white bg-opacity-35">
                                             <thead className="bg-emerald-900 bg-opacity-55 text-white">
                                                 <tr>
                                                     <th className="px-2 py-3 text-left text-sm font-medium pl-10">Amount</th>
-                                                    <th className="px-2 py-3 text-left text-sm font-medium">Payment</th>
+                                                    {/* <th className="px-2 py-3 text-left text-sm font-medium">Payment</th> */}
                                                     <th className="px-2 py-3 text-left text-sm font-medium pl-24">Items</th>
                                                     <th className="px-2 py-3 text-left text-sm font-medium">Address</th>
                                                     <th className="px-2 py-3 text-left text-sm font-medium">Actions</th>
@@ -309,9 +312,9 @@ function SeeOrder() {
                                                         <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-700 pl-10">
                                                             ₹{order.totalAmount}
                                                         </td>
-                                                        <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-700">
+                                                        {/* <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-700">
                                                             {order.paymentMethod}
-                                                        </td>
+                                                        </td> */}
                                                         <td className="py-4 whitespace-nowrap text-sm text-gray-700">
                                                             <ul className="list-disc list-inside">
                                                                 {order.cartItems.map((item) => (
@@ -346,7 +349,7 @@ function SeeOrder() {
                         </div>
                     </div>
                     <div>
-                        <img src={halfbg} alt="Orders Background" className="relative h-[1000px] w-[930px] hidden sm:block md:block opacity-85" />
+                        <img src={halfbg} alt="Orders Background" className="relative h-[840px] w-[960px] hidden sm:block md:block opacity-85" />
                     </div>
                 </div>
             )}
